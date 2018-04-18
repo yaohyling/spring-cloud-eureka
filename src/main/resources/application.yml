@@ -1,0 +1,23 @@
+#端口号设置
+server:
+  port: 18081
+spring:
+  application:
+    name: eureka-center
+#注册中心设置
+eureka:
+  environment: yhy 项目自用环境
+  client:
+    service-url:
+      defaultZone: http://localhost:18081/eureka/
+    registerWithEureka: true
+    fetchRegistry: false
+  healthcheck: 
+    enabled: true #开启健康检查
+  instance:
+    ipAddress: 127.0.0.1
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 30 # 续约更新时间间隔
+    lease-renewal-interval-in-seconds: 10 # 续约到期时间
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
